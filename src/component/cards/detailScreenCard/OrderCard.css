@@ -1,0 +1,185 @@
+.course_Bottom_Container1{
+    padding: 0px;
+    /* height: 140px; */
+    margin: 5px 0px;
+ }
+ .item-list{
+    margin: 0px;
+ }
+ .innerItems{
+    margin: 0px;
+ }
+.courseListImgDiv{
+    /* padding-left: 0px !important; */
+    padding: 0px 15px 25px 0px !important;
+}
+.cardListImage1{
+    margin-top: 20px;
+    height: 150px;
+    width: 320px;
+}
+.courseListTitleDiv{
+    padding: 0px;
+    margin: 0px;
+}
+.courseListTitle{
+    float: left;
+    width: 70%;
+}
+.courseListTitle h6{
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0px;
+ 
+}
+.courseListStars_Div{
+    float: right;
+    width: 30%;
+}
+.ratings1{
+    padding: 0px 0px 0px 0px !important;
+}
+.ratings1 p{
+    font-size: 13px;
+    margin: 0px;
+    margin-top: 5px;
+    text-align: right;
+}
+.courseListStars {
+    font-size: 13px;
+    margin: 0px !important;
+}
+.courseListRating{
+    margin: 0px !important;
+    color: #9BA0A4;
+}
+
+.courseIconDiv{
+    display: flex;
+    flex-direction: row;  
+    margin: -10px 0px 0px 0px;  
+}
+.courseIconDiv img{
+    margin: 0px 20px 0px 0px;
+}
+.no_of_students_enrolled{
+    background-color: #EAEEEF;
+    color: #9BA0A4;
+    font-size: 13px;
+}
+.no_of_students_enrolled span i{
+    margin: 0px 0px 0px 3px;
+}
+.total_no_of_students_text{
+    margin: 0px 2px 0px 4px;
+    font-size: 12px;
+}
+.courseListInstructorName{
+    margin: 15px 0px 0px 0px;
+    color: #9BA0A4;
+    font-size: 15px;
+    font-weight: 600;
+}
+.courseListInstructorName p{
+    margin: 0px;
+}
+.card-items{
+    margin: 0px;
+    padding: 0px;
+}
+.card-items:hover{
+    transform: scale(1.03);
+    transition: 3s;
+    box-shadow:  0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+.courseList_batch_detail{
+    display: flex;
+    flex-direction: row;
+}
+.courseList_batch_detail p{
+    margin: 0 0 2px 0;
+    font-size: 15px;
+    font-weight: 800;
+}
+.courseList_batch_detail .courseListStartingAt {
+    font-weight: 400;
+    font-size: 13px;
+  }
+.courseListstartingDate{
+    font-size: 15px;
+    font-weight: 600;
+    color: #005D9D;
+}
+.courseListClassShift{
+    width: 26px;
+    height: 22px;
+    margin: 0px 0px 5px 5px;
+}
+.courseList_lecture_classDays{
+    color: #9BA0A4;;
+    font-size: 13px;
+}
+.courseList_lecture_classDays p{
+    margin: 0px;
+}
+.moreBatches{
+    color: #005D9D;
+    font-size: 11px;
+    margin: 5px 0px 15px 0px;
+}
+
+@media only screen and (max-width: 1199px) {
+
+.courseListTitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0px;
+    overflow: hidden;
+    text-overflow: "ellipsis";
+    white-space: nowrap;
+    /* -webkit-line-clamp: 1; */
+}
+  }
+
+
+  /* @media only screen and (max-width: 767px) {
+    .moneyBackDiv{
+        display: none;
+    }
+    .course_level_discription{
+        display: none;
+        width: 0%;
+        float: left;
+    }
+    .titlecard{
+        float: left;   
+        width: 100% !important;
+    }
+    .titlecard h4{
+        font-size: 14px !important; 
+        font-weight: bold; 
+        border: solid;
+    }
+   
+    .ratings{
+        float: left;
+        text-align: left;
+        padding: 0px 0px 0px 0px !important;
+        font-size: 12px;
+    }
+    .coursePrices{
+        margin-top: 20px !important;
+        padding: 0;
+        margin: 0;
+        float: right;
+    }
+    .cardListStars{
+        font-size: 13px !important;
+        text-align: left !important;
+    }
+    .cardlistRating{
+        font-size: 12px !important;
+        text-align: left !important;
+    }
+  }  */

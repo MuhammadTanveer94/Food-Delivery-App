@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import "./DetailScreen.css";
 import kolachi from "../../assets/images/kolachi.jpeg";
 import UserDetailTab from "./UserDetailTab";
-import '../userDashboard/UserDashboard.css'
+import "../userDashboard/UserDashboard.css";
 import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
+import { OrderCard } from "../../component/cards/detailScreenCard";
+
 const styles = theme => ({
   margin: {
     margin: theme.spacing.unit
@@ -20,6 +22,16 @@ const styles = theme => ({
     marginBottom: theme.spacing.unit * 4,
     display: "flex"
   },
+  categoryTab: {
+    ...theme.mixins.gutters(),
+    paddingTop: theme.spacing.unit,
+    paddingBottom: theme.spacing.unit,
+    marginTop: theme.spacing.unit * 2,
+    marginBottom: theme.spacing.unit * 2,
+    width: "auto",
+    display: "flex",
+    justifyContent: "center"
+  }
 });
 
 class DetailScreen extends Component {
@@ -70,6 +82,19 @@ class DetailScreen extends Component {
               </div>
             </Paper>
           </div>
+
+          <div className="foodCategoryDiv">
+              <Paper className={classes.categoryTab} elevation={1}>
+                <Typography variant="h5" component="h3">
+                  Chinees
+                </Typography>
+              </Paper>
+
+              <OrderCard />
+              <OrderCard />
+
+              <OrderCard />
+            </div>
         </div>
       </div>
     );

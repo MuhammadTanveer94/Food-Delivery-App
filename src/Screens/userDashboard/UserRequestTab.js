@@ -4,17 +4,15 @@ import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import './AdminTab.css'
+// import './UserTab.css'
 
 const styles = {
   root: {
     flexGrow: 1
-  },  indicator: {
-    backgroundColor: 'teal',
-  },
+  }
 };
 
-class AdminTab extends React.Component {
+class UserRequestTab extends React.Component {
   state = {
     value: 0
   };
@@ -35,22 +33,19 @@ class AdminTab extends React.Component {
           onChange={this.handleChange}
           indicatorColor="primary"
           textColor="primary"
-          classes={{
-            indicator: classes.indicator
-          }}>
         >
           <Tab label="Pending" />
-          <Tab label="Progress" />
-          <Tab label="Delivered" />        
-                  
+          <Tab label="Progress" />   
+          <Tab label="Delivered" />                    
+                         
         </Tabs>
       </Paper>
     );
   }
 }
 
-AdminTab.propTypes = {
+UserRequestTab.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(AdminTab);
+export default withStyles(styles)(UserRequestTab);

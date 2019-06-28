@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import "./App.css";
 import {Home} from './Screens/Home'
 import {UserDash} from './Screens/userDashboard'
+import {AdminDash} from './Screens/adminDashboard'
 import {DetailScreen} from './Screens/userDetailScreen'
 
 export default class App extends Component{
@@ -20,7 +21,8 @@ export default class App extends Component{
       </header> */}
       {/* <Home /> */}
       {/* <UserDash /> */}
-      <DetailScreen />
+      <AdminDash />
+      {/* <DetailScreen /> */}
     </div>
 
     )

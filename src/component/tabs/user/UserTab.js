@@ -9,7 +9,10 @@ import './UserTab.css'
 const styles = {
   root: {
     flexGrow: 1
-  }
+  },
+  indicator: {
+    backgroundColor: 'teal',
+  },
 };
 
 class UserTab extends React.Component {
@@ -33,6 +36,9 @@ class UserTab extends React.Component {
           onChange={this.handleChange}
           indicatorColor="primary"
           textColor="primary"
+          classes={{
+            indicator: classes.indicator
+          }}>
         >
           <Tab label="Restaurents" />
           <Tab label="My Requests" />        
