@@ -19,9 +19,9 @@ export default class App extends Component{
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header> */}
-      {/* <Home /> */}
+      <Home />
       {/* <UserDash /> */}
-      <AdminDash />
+      {/* <AdminDash /> */}
       {/* <DetailScreen /> */}
     </div>
 

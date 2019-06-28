@@ -10,7 +10,7 @@ class Card extends Component {
 
   render() {
     return (
-      <div className="card usa">
+      <div className="card usa" style={{margin : "0px 0px 10px 0px"}}>
         {/* <img className="card-img-top"  src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=format%2Ccompresscs=tinysrgbdpr=1w=500" alt="Card image cap"/> */}
         <img
           className="card-img-top "

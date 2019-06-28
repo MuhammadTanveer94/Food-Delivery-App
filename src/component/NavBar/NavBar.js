@@ -72,17 +72,16 @@ class NavbarPage extends Component {
           {/* model start */}
           {loginModal && (
             <MDBContainer
-            // style={{
-            //   width: "20rem !important"
-            // }}
+            style={{
+              width: "20rem "
+            }}
             >
               <MDBModal
                 isOpen={this.state.loginModal}
                 toggle={this.toggle}
-                className="aaasasxsnxdjsbhxhjsbxhh"
-                style={{
-                  width: "320px !important"
-                }}
+                // style={{
+                //   width: "200px !important"
+                // }}
               >
                 <LoginForm />
               </MDBModal>

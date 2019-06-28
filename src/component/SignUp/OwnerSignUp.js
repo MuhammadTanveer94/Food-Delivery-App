@@ -34,7 +34,8 @@ export default class OwnerSignUp extends Component {
       email: "",
       country: "",
       password: "",
-      confirmPassword: ""
+      confirmPassword: "",
+      status: "Admin"
     };
   }
 
@@ -55,6 +56,7 @@ export default class OwnerSignUp extends Component {
       email,
       country,
       password,
+      status
     } = this.state;
 
     let data = {
@@ -62,7 +64,8 @@ export default class OwnerSignUp extends Component {
       name,
       email,
       country,
-      password
+      password,
+      status
     };
     try {
       const userData = await signUp(email, password, data, "Admin");

@@ -120,7 +120,7 @@ class FooterPage extends Component {
 <div class="container">
 
 
-<div class="row">
+{/* <div class="row">
 
 
   <div class="col-lg-2 col-md-12 mb-4">
@@ -211,7 +211,7 @@ class FooterPage extends Component {
   </div>
 
 
-</div>
+</div> */}
 
 
 </div>

@@ -48,7 +48,7 @@ class LoginForm extends React.Component {
               style={{
                 backgroundImage:
                   "url(https://mdbootstrap.com/img/Photos/Others/pricing-table7.jpg)",
-                width: "24rem"
+                width: "31rem"
               }}
             >
               <div className="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
@@ -71,7 +71,8 @@ class LoginForm extends React.Component {
                   label="Password"
                   placeholder="Insert your password."
                   fullWidth={true}
-                  onChange={e => this.handleInputChange(e, "email")}
+                  onChange={e => this.handleInputChange(e, "password")}
+                  type="password"
                 />
                 <div className="md-form pb-3" />
                 <MDBRow className="d-flex align-items-center mb-4">

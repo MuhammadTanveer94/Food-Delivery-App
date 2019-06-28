@@ -3,7 +3,8 @@ import { NavbarPage } from "../../component/NavBar";
 import "./Home.css";
 import SliderHome from "./Slider";
 import { MDBRow } from "mdbreact";
-import {Card} from '../../component/cards/landingCard'
+import { Card } from "../../component/cards/landingCard";
+import {FooterPage} from '../../component/footer'
 
 export default class Home extends Component {
   constructor() {
@@ -46,38 +47,42 @@ export default class Home extends Component {
       <div>
         <NavbarPage />
         <SliderHome />
-
-        <MDBRow id="main">
-          {/* <h1>Select Your City</h1><br/> */}
-          <Card
-            Source={
-              "https://images.deliveryhero.io/image/foodpanda/city-tile-pk/Karachi.jpg?width=400&height=250"
-            }
-            text={"Karachi"}
-          />
-          &nbsp;&nbsp;
-          <Card
-            Source={
-              "https://images.deliveryhero.io/image/foodpanda/city-tile-pk/Lahore.jpg?width=400&height=250"
-            }
-            text={"Islamabad"}
-          />
-          &nbsp;&nbsp;
-          <Card
-            Source={
-              "https://images.deliveryhero.io/image/foodpanda/city-tile-pk/Islamabad.jpg?width=400&height=250"
-            }
-            text={"Rawalpindi"}
-          />
-          &nbsp;&nbsp;
-          <Card
-            Source={
-              "https://images.deliveryhero.io/image/foodpanda/city-tile-pk/Rawalpindi.jpg?width=400&height=250"
-            }
-            text={"Hydrabad"}
-          />
-          &nbsp;&nbsp;
-        </MDBRow>
+        <div style={{margin: "25px 0px"}}>
+          <MDBRow id="main">
+            {/* <h1>Select Your City</h1><br/> */}
+            <Card
+              Source={
+                "https://images.deliveryhero.io/image/foodpanda/city-tile-pk/Karachi.jpg?width=400&height=250"
+              }
+              text={"Karachi"}
+            />
+            &nbsp;&nbsp;
+            <Card
+              Source={
+                "https://images.deliveryhero.io/image/foodpanda/city-tile-pk/Lahore.jpg?width=400&height=250"
+              }
+              text={"Islamabad"}
+            />
+            &nbsp;&nbsp;
+            <Card
+              Source={
+                "https://images.deliveryhero.io/image/foodpanda/city-tile-pk/Islamabad.jpg?width=400&height=250"
+              }
+              text={"Rawalpindi"}
+            />
+            &nbsp;&nbsp;
+            <Card
+              Source={
+                "https://images.deliveryhero.io/image/foodpanda/city-tile-pk/Rawalpindi.jpg?width=400&height=250"
+              }
+              text={"Hydrabad"}
+            />
+            &nbsp;&nbsp;
+          </MDBRow>
+        </div>
+        <div style={{margin: "25px 0px 0px 0px"}}>
+        <FooterPage />
+        </div>
       </div>
     );
   }

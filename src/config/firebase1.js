@@ -16,11 +16,13 @@ var db = firebase.database();
 var auth = firebase.auth();
 
 function login(email, password) {
-  console.log("signIn working")
+  console.log(email,password)
   return new Promise((resolve, reject) => {
     auth
       .signInWithEmailAndPassword(email, password)
-      .then(res => res.json())
+      .then(res =>{
+        console.log(res)
+        res.json()} )
       .then(user => {
         console.log(user);
         resolve(user);
