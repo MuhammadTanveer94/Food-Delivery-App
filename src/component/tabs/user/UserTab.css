@@ -1,0 +1,6 @@
+.MuiTab-textColorPrimary{
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: teal !important;
+} 
+/* .MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected */

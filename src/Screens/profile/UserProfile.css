@@ -1,0 +1,23 @@
+.profileBtnDiv{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 10px 10px 
+}
+.profileSaveBtn{
+    background-color: teal !important;
+    color: white;
+    border-radius: 10px;
+}
+.profileSaveBtn:hover{
+    background-color: teal !important;
+    color: white;
+    border-radius: 10px;
+    transform: scale(1.02);
+    transition: 1s;
+}
+.profileCancelBtn{
+    border: solid 1px teal;
+    color: teal;
+    border-radius: 10px;
+    background: transparent;
+}

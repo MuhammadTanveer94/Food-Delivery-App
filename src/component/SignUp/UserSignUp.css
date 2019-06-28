@@ -1,0 +1,7 @@
+.inputDiv{
+    display: flex;
+    flex-direction: row
+}
+.inputDiv .form-group{
+    margin: 0px 10px;
+}
