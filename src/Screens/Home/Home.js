@@ -1,10 +1,15 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { NavbarPage } from "../../component/NavBar";
 import "./Home.css";
 import SliderHome from "./Slider";
 import { MDBRow } from "mdbreact";
 import { Card } from "../../component/cards/landingCard";
-import {FooterPage} from '../../component/footer'
+import { FooterPage } from "../../component/footer";
+import { AdminDash } from "../adminDashboard";
+import { UserDash } from "../userDashboard";
+import { DetailScreen } from "../userDetailScreen";
+
 
 export default class Home extends Component {
   constructor() {
@@ -46,8 +51,32 @@ export default class Home extends Component {
     return (
       <div>
         <NavbarPage />
+        <div className="fileLinks">
+            <ul class="list-unstyled">
+              <Link to={'/UserDashBoard'}>
+                {" "}
+                <li>User Dashboard</li>
+              </Link>
+              <Link to={'/AdminDashBoard'}>
+                {" "}
+                <li>Company Dashboard</li>
+              </Link>
+              <Link to={'/detailScreen'}>
+                {" "}
+                <li>User Detail Page</li>
+              </Link>
+              <Link to={'/userRequest'}>
+                {" "}
+                <li>User Request Page</li>
+              </Link>
+
+              {/* <li>Company Dashboard</li>
+              <li>User Detail Page</li>
+              <li>User Dashboard</li> */}
+            </ul>
+        </div>
         <SliderHome />
-        <div style={{margin: "25px 0px"}}>
+        <div style={{ margin: "25px 0px" }}>
           <MDBRow id="main">
             {/* <h1>Select Your City</h1><br/> */}
             <Card
@@ -80,8 +109,8 @@ export default class Home extends Component {
             &nbsp;&nbsp;
           </MDBRow>
         </div>
-        <div style={{margin: "25px 0px 0px 0px"}}>
-        <FooterPage />
+        <div style={{ margin: "25px 0px 0px 0px" }}>
+          <FooterPage />
         </div>
       </div>
     );

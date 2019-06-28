@@ -1,0 +1,9 @@
+.fileLinks ul{
+    display: inline-flex;
+}
+.fileLinks li{
+    margin: 5px 10px 0px 10px;
+    cursor: pointer;
+    color: teal;
+    font-weight: 500
+}
