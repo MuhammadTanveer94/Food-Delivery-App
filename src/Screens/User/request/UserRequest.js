@@ -7,7 +7,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import UserRequestTab from "./UserRequestTab";
 import './UserRequest.css'
-import {Button} from '../../component/buttons/bootstrapButton'
+import {Button} from '../../../component/buttons/bootstrapButton'
 const styles = theme => ({
   margin: {
     margin: theme.spacing.unit

@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import "./DetailScreen.css";
-import kolachi from "../../assets/images/kolachi.jpeg";
+import kolachi from "../../../assets/images/kolachi.jpeg";
 import UserDetailTab from "./UserDetailTab";
-import "../userDashboard/UserDashboard.css";
+import "../home/UserDashboard.css";
 import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import { OrderCard } from "../../component/cards/detailScreenCard";
+import { OrderCard } from "../../../component/cards/detailScreenCard";
 
 const styles = theme => ({
   margin: {
@@ -84,17 +84,17 @@ class DetailScreen extends Component {
           </div>
 
           <div className="foodCategoryDiv">
-              <Paper className={classes.categoryTab} elevation={1}>
-                <Typography variant="h5" component="h3">
-                  Chinees
-                </Typography>
-              </Paper>
+            <Paper className={classes.categoryTab} elevation={1}>
+              <Typography variant="h5" component="h3">
+                Chinees
+              </Typography>
+            </Paper>
 
-              <OrderCard />
-              <OrderCard />
+            <OrderCard />
+            <OrderCard />
 
-              <OrderCard />
-            </div>
+            <OrderCard />
+          </div>
         </div>
       </div>
     );

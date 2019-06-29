@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Home } from "./Screens/Home";
-import { UserDash } from "./Screens/userDashboard";
-import { AdminDash } from "./Screens/adminDashboard";
-import { DetailScreen } from "./Screens/userDetailScreen";
-import UserRequest from "./Screens/userDashboard/UserRequest";
+import { UserDash } from "./Screens/User/home";
+import { AdminDash } from "./Screens/Admin/Home";
+import { DetailScreen } from "./Screens/User/userDetailScreen";
+import UserRequest from "./Screens/User/request/UserRequest";
 
 export default class App extends Component {
   constructor(props) {
@@ -27,8 +27,8 @@ export default class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/UserDashBoard" component={UserDash} />
-            <Route exact path="/AdminDashBoard" component={AdminDash} />
+            <Route path="/User" component={UserDash} />
+            <Route exact path="/Admin" component={AdminDash} />
             <Route path="/detailScreen" component={DetailScreen} />
             <Route path="/userRequest" component={UserRequest} />
 
