@@ -16,13 +16,14 @@ var db = firebase.database();
 var auth = firebase.auth();
 
 function login(email, password) {
-  console.log(email,password)
+  console.log(email, password);
   return new Promise((resolve, reject) => {
     auth
       .signInWithEmailAndPassword(email, password)
-      .then(res =>{
-        console.log(res)
-        res.json()} )
+      .then(res => {
+        console.log(res);
+        res.json();
+      })
       .then(user => {
         console.log(user);
         resolve(user);
@@ -39,23 +40,22 @@ function signUp(email, password, userData, type) {
   console.log("working");
 
   return new Promise((resolve, reject) => {
-    auth.createUserWithEmailAndPassword(email, password);
-    let userUid = firebase.auth().currentUser.uid;
-    console.log(userUid);
-    db.ref(`${type}/` + userUid)
-      .set(userData)
-      .then(res => res.json())
-      .then(newUser => {
-        console.log(newUser);
-        resolve(newUser);
-      })
-      .catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        reject(errorMessage);
-        // ...
-      });
+    auth.createUserWithEmailAndPassword(email, password).then(data => {
+      userData.uid = data.user.uid;
+      db.ref(`${type}/` + data.user.uid)
+        .set(userData)
+        .then(() => {
+          console.log(userData);
+          resolve(userData);
+        })
+        .catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          reject(errorMessage);
+          // ...
+        });
+    });
   });
 }
 

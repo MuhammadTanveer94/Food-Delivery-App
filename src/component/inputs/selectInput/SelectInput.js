@@ -63,7 +63,7 @@ class SelectInput extends React.Component {
 
   render() {
     const { classes, label, helperText, data, fullWidth=false, onChange } = this.props;
-
+    console.log(data)
     return (
       <form className={classes.container} noValidate autoComplete="off">
         <TextField

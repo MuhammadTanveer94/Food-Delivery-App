@@ -5,12 +5,16 @@ import SelectInput from "../inputs/selectInput";
 import MaterialInput from "../inputs/materialInput";
 import backgroundImage from "../../assets/images/resturents.jpg";
 import { login, signUp } from "../../config/firebase1";
+import UserTypes from "../../constants/userTypes";
 
 export default class UserSignUp extends Component {
   constructor() {
     super();
     this.state = {
-      genderData: ["Male", "Female"],
+      genderData: [
+        { label: "Male", value: "male" },
+        { label: "Female", value: "female" }
+      ],
       name: "",
       email: "",
       age: "",
@@ -22,7 +26,7 @@ export default class UserSignUp extends Component {
   }
 
   handleInputChange = (e, key) => {
-    console.log(key, e.target.value)
+    console.log(key, e.target.value);
     this.setState({ [key]: e.target.value });
   };
 
@@ -49,7 +53,8 @@ export default class UserSignUp extends Component {
       gender,
       country,
       password,
-    }
+      type: UserTypes.USER
+    };
     try {
       const userData = await signUp(email, password, data, "User");
     } catch (e) {

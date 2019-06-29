@@ -8,6 +8,7 @@ import Button from "@material-ui/core/Button";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import { makeStyles } from "@material-ui/core/styles";
 import { login, signUp } from "../../config/firebase1";
+import UserTypes from "../../constants/userTypes";
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -50,14 +51,7 @@ export default class OwnerSignUp extends Component {
   };
 
   async fetchSignUpData() {
-    let {
-      resturentName,
-      name,
-      email,
-      country,
-      password,
-      status
-    } = this.state;
+    let { resturentName, name, email, country, password } = this.state;
 
     let data = {
       resturentName,
@@ -65,7 +59,7 @@ export default class OwnerSignUp extends Component {
       email,
       country,
       password,
-      status
+      type: UserTypes.ADMIN
     };
     try {
       const userData = await signUp(email, password, data, "Admin");
@@ -117,7 +111,6 @@ export default class OwnerSignUp extends Component {
                     label="Email"
                     placeholder="Insert your email."
                     onChange={e => this.handleInputChange(e, "email")}
-                   
                   />
                 </div>
                 <div className="inputDiv">

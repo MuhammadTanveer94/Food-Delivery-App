@@ -1,12 +1,6 @@
 import React, { Component } from "react";
-// import { Image, Transformation } from "cloudinary-react";
 import "./OrderCard.css";
 import kolachi from '../../../assets/images/kolachi.jpeg'
-// import pic from "../../../images/person_1.jpg";
-// import sun from "../../../images/sun.png";
-// import envrollmentBatch from "../../../images/openEnrol.png";
-// import live from "../../../images/livee.png";
-// import maths from "../../../images/maths.png";
 
 
 export default class OrderCard extends Component {
@@ -77,16 +71,6 @@ export default class OrderCard extends Component {
 
                     <div style={{ clear: "both" }} />
 
-                    <div className="courseIconDiv">
-                      {/* <img src={} alt="" />
-                      <img src={} alt="" /> */}
-                      <div className="no_of_students_enrolled">
-                        <span>
-                          <i className="fas fa-graduation-cap" />
-                        </span>
-                        <span className="total_no_of_students_text">9,500</span>
-                      </div>
-                    </div>
 
                     <div className="courseListInstructorName">
                       {/* <p>By ${some name}</p> */}
