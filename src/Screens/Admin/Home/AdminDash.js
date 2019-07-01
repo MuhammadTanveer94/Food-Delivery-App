@@ -137,7 +137,7 @@ class AdminDash extends Component {
     } = this.state;
     return (
       <div>
-        <div>
+        {/* <div>
           <nav class="navbar">
             <span class="">Navbar</span>
             <span>
@@ -174,7 +174,7 @@ class AdminDash extends Component {
               </Menu>
             </span>
           </nav>
-        </div>
+        </div> */}
 
         {isDashBoardActive && (
           <div>

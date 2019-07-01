@@ -3,7 +3,7 @@ import { AdminDash } from "./Home";
 import AddItem from "./Items/AddItem";
 import AdminProfile from "./Profile/AdminProfile";
 
-const routes = [
+export const routes = [
   {
     path: "/dashboard",
     exact: true,
@@ -25,4 +25,12 @@ const routes = [
     component: AddItem,
     name: "Items"
   }
+];
+
+export const pages = [
+  { path: "/dashboard", name: "Home" },
+  { path: "/dashboard/profile", name: "Profile" },
+  { path: "Location", name: "Location" },
+  { path: "/dashboard/category", name: "Add Category" },
+  { path: "/dashboard/items", name: "Add Item" }
 ];

@@ -1,4 +1,6 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
+
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard } from "mdbreact";
 import "./Login.css";
 import MaterialInput from "../inputs/materialInput";
@@ -14,7 +16,6 @@ class LoginForm extends React.Component {
   }
 
   handleInputChange = (e, key) => {
-    console.log(key, e.target.value)
     this.setState({ [key]: e.target.value });
   };
 
@@ -24,19 +25,20 @@ class LoginForm extends React.Component {
   };
 
   async fetchSignInData() {
-    let {
-      email,
-      password
-    } = this.state;
-
+    let { email, password } = this.state;
     try {
       const userData = await login(email, password);
+      if (userData) {
+        console.log(userData);
+        localStorage.isAuthenticated = true;
+        localStorage.userData = JSON.stringify(userData);
+        this.props.history.push("/dashboard");
+      }
     } catch (e) {
     } finally {
       this.setState({ loading: false });
     }
   }
-
 
   render() {
     return (
@@ -105,7 +107,7 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);
 
 // import React from 'react';
 // import Avatar from '@material-ui/core/Avatar';

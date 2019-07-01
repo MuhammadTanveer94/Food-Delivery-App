@@ -89,7 +89,7 @@ class UserDash extends Component {
     const { anchorEl, cardData, isProfileActive, mapOpen } = this.state;
     return (
       <div>
-        <div>
+        {/* <div>
           <nav class="navbar">
             <span class="">Navbar</span>
             <span>
@@ -120,7 +120,7 @@ class UserDash extends Component {
               </Menu>
             </span>
           </nav>
-        </div>
+        </div> */}
         <UserTab />
 
         {!isProfileActive && (

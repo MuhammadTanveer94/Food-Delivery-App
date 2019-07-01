@@ -6,6 +6,7 @@ import { UserDash } from "./Screens/User/home";
 import { AdminDash } from "./Screens/Admin/Home";
 import { DetailScreen } from "./Screens/User/userDetailScreen";
 import UserRequest from "./Screens/User/request/UserRequest";
+import Dashboard from "./Screens/Dashboard/Dashboard";
 
 export default class App extends Component {
   constructor(props) {
@@ -27,11 +28,7 @@ export default class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/User" component={UserDash} />
-            <Route exact path="/Admin" component={AdminDash} />
-            <Route path="/detailScreen" component={DetailScreen} />
-            <Route path="/userRequest" component={UserRequest} />
-
+            <Route path="/dashboard" component={Dashboard} />
             <Route component={Home} />
           </Switch>
         </Router>
