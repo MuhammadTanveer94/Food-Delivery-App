@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import MaterialInput from "../../component/inputs/materialInput";
+import MaterialInput from "../../../component/inputs/materialInput";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import {Button} from '../../component/buttons/bootstrapButton'
+import {Button} from '../../../component/buttons/bootstrapButton'
 // import './UserProfile.css'
 
 const styles = theme => ({

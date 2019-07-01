@@ -7,22 +7,19 @@ import { withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import PropTypes from "prop-types";
-import { AdminTab } from "../../component/tabs/admin";
-import "./AdminDash.css";
+import { UserTab } from "../../../component/tabs/user";
+import "./UserDashboard.css";
 import Typography from "@material-ui/core/Typography";
 import Chip from "@material-ui/core/Chip";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
-// import { userDashCard } from "../../component/cards/userDashBoardCard";
-// import { UserProfile } from "../profile";
-// import { MapControl } from "../../component/map";
-import AdminProfile from "./AdminProfile";
-import AddCategory from "./AddCategory";
-import AddItem from "./AddItem";
-import { AdminReqCard } from "../../component/cards/adminReqestCard";
-import { FooterPage } from "../../component/footer";
-
+import { userDashCard } from "../../../component/cards/userDashBoardCard";
+import { UserProfile } from "../profile";
+import { MapControl } from "../../../component/map";
+import { FooterPage } from "../../../component/footer";
+import UserRequestTab from "../request/UserRequestTab";
+import UserRequest from "../request/UserRequest";
 const styles = theme => ({
   margin: {
     margin: theme.spacing.unit
@@ -48,7 +45,7 @@ const styles = theme => ({
   }
 });
 
-class AdminDash extends Component {
+class UserDash extends Component {
   constructor(props) {
     super();
     this.state = {
@@ -61,11 +58,7 @@ class AdminDash extends Component {
         "Fast Food",
         "Fast Food"
       ],
-      isDashBoardActive: true,
       isProfileActive: false,
-      isLocationActive: false,
-      isAddCategoryActive: false,
-      isAddItemActive: false,
       mapOpen: false,
       top: false
     };
@@ -77,42 +70,11 @@ class AdminDash extends Component {
   handleClose = key => {
     if (key === "profile") {
       console.log("profile");
-      this.setState({
-        anchorEl: null,
-        isDashBoardActive: false,
-        isProfileActive: true,
-        top: false,
-        isAddCategoryActive: false,
-        isAddItemActive: false
-      });
-    } else if (key === "setLocation") {
-      this.setState({
-        anchorEl: null,
-        isDashBoardActive: false,
-        isProfileActive: false,
-        top: true,
-        isAddCategoryActive: false,
-        isAddItemActive: false
-      });
-    } else if (key === "addCategory") {
-      this.setState({
-        anchorEl: null,
-        isDashBoardActive: false,
-        isProfileActive: false,
-        top: false,
-        isAddCategoryActive: true,
-        isAddItemActive: false
-      });
-    } else if (key === "addItem") {
-      this.setState({   anchorEl: null,
-        isDashBoardActive: false,
-        isProfileActive: false,
-        top: false,
-        isAddCategoryActive: false,
-        isAddItemActive: true });
+      this.setState({ isProfileActive: true });
     } else if (key === "location") {
-      this.setState({ anchorEl: null, top: true });
+      this.setState({ top: true });
     }
+    this.setState({ anchorEl: null });
   };
 
   toggleDrawer = (side, open) => {
@@ -124,18 +86,10 @@ class AdminDash extends Component {
 
   render() {
     const { classes } = this.props;
-    const {
-      anchorEl,
-      cardData,
-      isProfileActive,
-      mapOpen,
-      isDashBoardActive,
-      isAddCategoryActive,
-      isAddItemActive
-    } = this.state;
+    const { anchorEl, cardData, isProfileActive, mapOpen } = this.state;
     return (
       <div>
-        <div>
+        {/* <div>
           <nav class="navbar">
             <span class="">Navbar</span>
             <span>
@@ -159,45 +113,102 @@ class AdminDash extends Component {
                 <MenuItem onClick={() => this.handleClose("profile")}>
                   Profile
                 </MenuItem>
-                <MenuItem onClick={() => this.handleClose("setLocation")}>
-                  Set Location
-                </MenuItem>
-                <MenuItem onClick={() => this.handleClose("addCategory")}>
-                  Add Category
-                </MenuItem>
-                <MenuItem onClick={() => this.handleClose("addItem")}>
-                  Add Item
+                <MenuItem onClick={() => this.handleClose("location")}>
+                  My location
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>Logout</MenuItem>
               </Menu>
             </span>
           </nav>
-        </div>
+        </div> */}
+        <UserTab />
 
-        {isDashBoardActive && (
-          <div>
-            <AdminTab />
-
-            <div className="container" style={{ margin: "50px auto 0px auto" }}>
-              <AdminReqCard />
-              <AdminReqCard />
-              <AdminReqCard />
+        {!isProfileActive && (
+          <div className="container">
+            <div className="searchDiv">
+              <Paper className={classes.root} elevation={1}>
+                <TextField
+                  id="standard-name"
+                  label="Search By Resturents Name"
+                  className={classes.textField}
+                  value={this.state.name}
+                  fullWidth={true}
+                  variant="outlined"
+                  // onChange={this.handleChange("name")}
+                  margin="normal"
+                />
+                <div className="searchBtn">
+                  <span>
+                    <i class="fas fa-search" />
+                  </span>
+                </div>
+              </Paper>
             </div>
-            <div className="footerDiiv" style={{ marginTop: "40px" }}>
-              <FooterPage />
+
+            <div className="chipDiv">
+              <Chip label="Basic Chip" className={classes.chip} />
+              <Chip label="Basic Chip" className={classes.chip} />
+              <Chip label="Basic Chip" className={classes.chip} />
+              <Chip label="Basic Chip" className={classes.chip} />
+              <Chip label="Basic Chip" className={classes.chip} />
+              <Chip label="Basic Chip" className={classes.chip} />
+              <Chip label="Basic Chip" className={classes.chip} />
+              <Chip label="Basic Chip" className={classes.chip} />
+              <Chip label="Basic Chip" className={classes.chip} />
+              <Chip label="Basic Chip" className={classes.chip} />
+            </div>
+
+            <div className="foodCardsDiv">
+              {cardData.map(name => {
+                return (
+                  <div
+                    class="card card-cascade  wider userFoodCard"
+                    style={{ width: "280px" }}
+                  >
+                    <div
+                      class="view view-cascade overlay"
+                      style={{ width: "240px", margin: "auto" }}
+                    >
+                      <img
+                        class="card-img-top"
+                        src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"
+                        alt="Card image cap"
+                      />
+                      <a>
+                        <div class="mask rgba-white-slight" />
+                      </a>
+                    </div>
+
+                    <div class="card-body card-body-cascade userFoodCategory">
+                      <h4 class="font-weight-bold card-title">
+                        Cheat day inspirations
+                      </h4>
+
+                      <h5 class="pink-text pb-2 pt-1">
+                        <i class="fas fa-utensils" /> {name}
+                      </h5>
+
+                      <p class="card-text">
+                        Ut enim ad minima veniam, quis nostrum exercitationem
+                        ullam corporis suscipit laboriosam, nisi ut aliquid ex
+                        ea commodi.
+                      </p>
+
+                      <a
+                        class="btn "
+                        style={{ color: "white", backgroundColor: "teal" }}
+                      >
+                        Button
+                      </a>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         )}
 
-        {isProfileActive && <AdminProfile />}
-
-        {isAddCategoryActive && <AddCategory />}
-        {isAddItemActive && <AddItem />}
-        {/* <AdminTab /> */}
-
-        {/* <AdminProfile /> */}
-        {/* <AddCategory /> */}
-        {/*  */}
+        {isProfileActive && <UserProfile />}
 
         {/* <MapControl drawerOpen={mapOpen} /> */}
 
@@ -228,14 +239,16 @@ class AdminDash extends Component {
           </div>
         </SwipeableDrawer>
 
+        {/* <UserRequest /> */}
+
         {/* <FooterPage /> */}
       </div>
     );
   }
 }
 
-AdminDash.propTypes = {
+UserDash.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(AdminDash);
+export default withStyles(styles)(UserDash);

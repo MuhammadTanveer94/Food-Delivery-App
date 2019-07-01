@@ -1,4 +1,5 @@
 import * as firebase from "firebase";
+import UserTypes from "../constants/userTypes";
 
 var firebaseConfig = {
   apiKey: "AIzaSyDDDyqpQzphpKOzTE0Dd-IHIYER0zHJq0M",
@@ -20,13 +21,13 @@ function login(email, password) {
   return new Promise((resolve, reject) => {
     auth
       .signInWithEmailAndPassword(email, password)
-      .then(res => {
-        console.log(res);
-        res.json();
-      })
-      .then(user => {
-        console.log(user);
-        resolve(user);
+      .then(data => {
+        db.ref(`User/${data.user.uid}`)
+          .once("value")
+          .then(snap => {
+            let user = snap.val();
+            resolve(user);
+          });
       })
       .catch(error => {
         var errorCode = error.code;
@@ -37,12 +38,12 @@ function login(email, password) {
 }
 
 function signUp(email, password, userData, type) {
-  console.log("working");
+  console.log("working", password);
 
   return new Promise((resolve, reject) => {
     auth.createUserWithEmailAndPassword(email, password).then(data => {
       userData.uid = data.user.uid;
-      db.ref(`${type}/` + data.user.uid)
+      db.ref(`User/` + data.user.uid)
         .set(userData)
         .then(() => {
           console.log(userData);
@@ -59,4 +60,16 @@ function signUp(email, password, userData, type) {
   });
 }
 
-export { login, signUp };
+function signOut() {
+  return auth.signOut();
+}
+
+// firebase.auth().onAuthStateChanged(function(user) {
+//   if (user) {
+//     localStorage.isAuthenticated = true;
+//   } else {
+//     localStorage.isAuthenticated = false;
+//   }
+// });
+
+export { login, signUp, signOut };

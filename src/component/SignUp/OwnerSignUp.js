@@ -129,7 +129,7 @@ export default class OwnerSignUp extends Component {
                   <MaterialInput
                     label="Password"
                     placeholder="Insert your password."
-                    onChange={e => this.handleInputChange(e, "Password")}
+                    onChange={e => this.handleInputChange(e, "password")}
                   />
                   <MaterialInput
                     label="Confirm password"
